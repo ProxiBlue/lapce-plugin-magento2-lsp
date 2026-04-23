@@ -1,0 +1,15 @@
+name = "lapce-plugin-magento2-lsp"
+version = "0.1.0"
+author = "proxiblue"
+display-name = "Magento 2 LSP"
+description = "Magento 2 cross-reference LSP (DI, layout, events, plugin chain) powered by @mage-os/magento2-lsp"
+wasm = "lapce-plugin-magento2-lsp.wasm"
+repository = "https://github.com/proxiblue/lapce-plugin-magento2-lsp"
+
+[activation]
+language = ["php", "xml"]
+workspace-contains = ["app/etc/di.xml", "app/etc/config.php"]
+
+[config."lsp.serverPath"]
+default = "/usr/local/bin/magento2-lsp"
+description = "Path to magento2-lsp executable"

@@ -1,0 +1,25 @@
+[package]
+name = "lapce-plugin-magento2-lsp"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+lapce-plugin = "0.1.2"
+
+# Vendored psp-types is pinned to lsp-types 0.94 so the `Url` symbol still exists.
+# Upstream psp-types 0.1.1 declares `lsp-types = "0"`, which resolves to 0.97.x where
+# `Url` was renamed `Uri`, breaking the build. Patch redirects to vendor/psp-types/.
+[patch.crates-io]
+psp-types = { path = "vendor/psp-types" }
+
+[build-dependencies]
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.5.9"
+
+[profile.release]
+opt-level = "s"
+lto = true
