@@ -1,6 +1,6 @@
 name = "lapce-plugin-magento2-lsp"
 version = "0.1.0"
-author = "proxiblue"
+author = "ProxiBlue"
 display-name = "Magento 2 LSP"
 description = "Magento 2 cross-reference LSP (DI, layout, events, plugin chain) powered by @mage-os/magento2-lsp"
 wasm = "lapce-plugin-magento2-lsp.wasm"
